@@ -1,0 +1,310 @@
+.container-3fq {
+  align-items: center;
+  min-height: 65vh;
+}
+
+.container-gbx {
+  --bs-gutter-x: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .container-gbx {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-gbx {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-gbx {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-gbx {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container-gbx {
+    max-width: 1320px;
+  }
+}
+
+.content-o2o {
+  justify-content: space-between !important;
+}
+
+.py-b5o {
+  padding-bottom: 3rem !important;
+  padding-top: 3rem !important;
+}
+
+@media (min-width: 768px) {
+  .d-md-fdo {
+    display: flex !important;
+  }
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+.main-ljs {
+  background: #fcfbfb;
+  border-radius: 8px;
+  box-shadow: 17px 17px 34px #d0d0d0;
+  min-height: 600px;
+}
+
+.col-92l {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .col-4hx {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+
+.d-2fw {
+  display: flex !important;
+}
+
+.column-gpn {
+  flex-direction: column !important;
+}
+
+.content-v6q {
+  justify-content: center !important;
+}
+
+.p-i17 {
+  padding: 3rem !important;
+}
+
+@media (min-width: 768px) {
+  .me-md-dzb {
+    margin-right: 0.5rem !important;
+  }
+}
+
+.sid-1vg {
+  width: 600px;
+}
+
+@media (min-width: 576px) {
+  .mt-sm-pds {
+    margin-top: 3rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .ms-md-vsk {
+    margin-left: 0.5rem !important;
+  }
+}
+
+p {
+  color: #4b456f;
+}
+
+p {
+  font-family: Lato, sans-serif;
+  font-size: 15px;
+}
+
+p {
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.ihyxi {
+  color: #2d385e;
+  font-weight: bolder;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.ihyxi {
+  font-family: Lato, sans-serif;
+  font-size: 20px;
+}
+
+.ogfbi {
+  margin-bottom: 20px;
+}
+
+.text-2ph {
+  text-align: center !important;
+}
+
+form {
+  text-align: center;
+}
+
+a {
+  color: #0d6efd;
+  color: var(--bs-link-color);
+  text-decoration: underline;
+}
+
+.tcnvb {
+  color: #ff8500;
+  font-size: 15px;
+  text-align: center;
+}
+
+a:hover {
+  color: #0a58ca;
+  color: var(--bs-link-hover-color);
+}
+
+.for-lnt {
+  color: #fe8303;
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 52px;
+}
+
+h1 {
+  color: #4b456f;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: calc(1.375rem + 1.5vw);
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+button {
+  border-radius: 0;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+button {
+  text-transform: none;
+}
+
+button {
+  -webkit-appearance: button;
+}
+
+.btn-r7n {
+  font-family: Lato, sans-serif;
+  font-size: 20px;
+}
+
+.btn-r7n {
+  background-color: #516cf0;
+  border: 1.5px;
+  border-radius: 5px;
+  height: 52px;
+  margin-bottom: 15px;
+  margin-left: 7px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.btn-r7n {
+  background-color: #fe8303;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400px;
+  height: 41px;
+  margin-left: 10px;
+  text-align: center;
+  vertical-align: middle;
+  width: 200px;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+.btn-r7n:hover {
+  background-color: #ff8500;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+.input-5lz {
+  border: 1px solid silver;
+  border-radius: 5px;
+  font-size: 17px;
+  height: 50px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  width: 100%;
+}
+
+.sho-bzj {
+  cursor: pointer;
+  opacity: 0.65;
+}
+
+.field-wzx {
+  float: right;
+  margin-right: 20px;
+  margin-top: -55px;
+  position: relative;
+  z-index: 2;
+}
+
+svg {
+  vertical-align: middle;
+}
+
+/* These were inline style tags. Uses id+class to override almost everything */
+
+#style-nZZ5J.style-nZZ5J {
+  display: inline-block;
+}
