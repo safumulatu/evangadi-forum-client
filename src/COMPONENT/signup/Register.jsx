@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import * as yup from 'yup';
@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import 'react-toastify/dist/ReactToastify.css';
 import './Register.css';
-
+import axios  from '../axiosConfig/Axios';
 function Register() {
   const [formData, setFormData] = useState({
     username: '',
@@ -32,37 +32,35 @@ function Register() {
       )
   });
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    try {
-      await schema.validate(formData, { abortEarly: false });
-      const response = await fetch('http://localhost:8000/api/users/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
+async function handleSubmit(e) {
+  e.preventDefault();
+  try {
+    await schema.validate(formData, { abortEarly: false });
+    const response = await axios.post(`/register`, formData, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    if (response.status === 200) {
+      toast.success('Registration successful. Please log in.');
+      navigate('/login');
+    } else {
+      toast.error(response.data.message || 'An error occurred. Please try again.');
+    }
+  } catch (err) {
+    if (err instanceof yup.ValidationError) {
+      const newErrors = {};
+      err.inner.forEach(error => {
+        newErrors[error.path] = error.message;
       });
-      if (response.ok) {
-        toast.success('Registration successful. Please log in.');
-        navigate('/login');
-      } else {
-        const data = await response.json();
-        toast.error(data.message || 'An error occurred. Please try again.');
-      }
-    } catch (err) {
-      if (err instanceof yup.ValidationError) {
-        const newErrors = {};
-        err.inner.forEach(error => {
-          newErrors[error.path] = error.message;
-        });
-        setErrors(newErrors);
-      } else {
-        console.error('Error submitting form:', err);
-        toast.error('An error occurred. Please try again.');
-      }
+      setErrors(newErrors);
+    } else {
+      console.error('Error submitting form:', err);
+      toast.error('An error occurred. Please try again.');
     }
   }
+}
+
 
   function handleChange(e) {
     const { name, value } = e.target;

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import Toast CSS
-import axios from "axios";
+import axios from '../axiosConfig/Axios'
 import ArrowCircleRightTwoToneIcon from "@mui/icons-material/ArrowCircleRightTwoTone";
 import { useNavigate } from "react-router-dom";
 import "./Question.css";
@@ -15,7 +15,7 @@ function AskQuestion() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:8000/api/users/addquestion",
+        `/addquestion`,
         {
           title: newQuestion,
           description: description,

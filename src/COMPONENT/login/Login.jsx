@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../axiosConfig/Axios'
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -22,7 +22,8 @@ function Login() {
 
     setIsSubmitting(true);
     try {
-      const response = await axios.post('http://localhost:8000/api/users/login', formData);
+      const response = await 
+      axios.post(`/login`, formData);
       const data = response.data;
       localStorage.setItem('token', data.token);
       console.log(data);

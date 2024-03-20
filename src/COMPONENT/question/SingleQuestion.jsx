@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../axiosConfig/Axios';
 import { CgProfile } from 'react-icons/cg';
 import './singlequestion.css';
 
@@ -18,7 +18,7 @@ function SingleQuestion() {
     async function fetchData() {
       try {
         const token = localStorage.getItem('token');
-        const questionResponse = await axios.get(`http://localhost:8000/api/users/question/${questionid}`, {
+        const questionResponse = await axios.get(`/question/${questionid}`, {
           headers: {
             Authorization: 'Bearer ' + token,
           },
@@ -27,7 +27,7 @@ function SingleQuestion() {
         setQuestion(questionResponse.data.title.toUpperCase());
         setDescription(questionResponse.data.description.toLowerCase());
 
-        const response = await axios.get(`http://localhost:8000/api/users/all-answers/${questionid}`, {
+        const response = await axios.get(`/all-answers/${questionid}`, {
           headers: {
             Authorization: 'Bearer ' + token,
           },
@@ -53,33 +53,29 @@ function SingleQuestion() {
       setAlertMessage('Failed to post answer. Please try again.');
       return;
     }
-
+  
     setIsLoading(true);
-
+  
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:8000/api/users/question/${questionid}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: 'Bearer ' + token,
-        },
-        body: JSON.stringify({ answer: newAnswer }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to post answer. Please try again.');
-      }
-
-      const responseData = await response.json();
-      if (responseData.msg) {
-        setAlertMessage('Success: ' + responseData.msg);
+      const response = await axios.post(`/question/${questionid}`, 
+        { answer: newAnswer },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + token,
+          },
+        }
+      );
+  
+      if (response.data.msg) {
+        setAlertMessage('Success: ' + response.data.msg);
       }
     
       const updatedAnswers = [...answers, { answer: newAnswer }];
       setAnswers(updatedAnswers);
       setNewAnswer('');
-
+  
       setTimeout(() => {
         setAlertMessage('');
       }, 1000);
@@ -90,6 +86,7 @@ function SingleQuestion() {
       setIsLoading(false);
     }
   };
+  
 
   return (
     <section className="forbackGrounds">
@@ -98,7 +95,7 @@ function SingleQuestion() {
           <div className="col-md-12 max-width">
             <h1 className="titlequestion">QUESTION</h1>
             <h4 className="question">TITLE:{question}</h4>
-            <span className="description">Question desc:{description}</span>
+            <span className="description">Question:{description}</span>
             <div>
               <h1 className="answerTitle">Answers From the Community</h1>
             </div>

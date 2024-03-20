@@ -8,7 +8,7 @@ import { createContext } from 'react';
 import Header from '../src/COMPONENT/header/Header'
 import Footer from './COMPONENT/footer/Footer'
 import Register from './COMPONENT/signup/Register';
-import axios from 'axios'
+import axios from '../src/COMPONENT/axiosConfig/Axios'
 import AskQuestion from './COMPONENT/question/AskQuestion';
 import Question from './COMPONENT/question/Question';
 import Answer from './COMPONENT/answer/Answer';
@@ -27,7 +27,7 @@ function App() {
 	//  to get and set user data
 	async function checkUser() {
 		try {
-			const { data } = await axios.get("http://localhost:8000/api/users/check", {
+			const { data } = await axios.get(`/check`, {
 				headers: {
 					Authorization: "Bearer " + token,
 				},
