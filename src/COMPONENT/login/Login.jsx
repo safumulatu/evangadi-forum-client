@@ -103,23 +103,22 @@ function Login() {
             Create an account?
           </Link>
         </div>
-        <div className="sid-dkq container-9nr col-kvs col-6gi ms-md-tpe mt-sm-jw4 color-black">
-          <p className="for-oei">
-            About
-          </p>
-          <h1>
-            Evangadi Networks Q&amp;A
-          </h1>
-          <p>
-            No matter what stage of life you are in, whether you’re just starting elementary school or being promoted to CEO of a Fortune 500 company, you have much to offer to those who are trying to follow in your footsteps.!
-          </p>
-          <p>
-            Whether you are willing to share your knowledge or you are just looking to meet mentors of your own, please start by joining the network here.
-          </p>
-          <button className="btn-m9c">
-            HOW IT WORKS
-          </button>
-        </div>
+        <div className="Sig-pta container-hpk col-db2 col-ghb ms-md-9vt mt-sm-88v">
+            <p className="for-e36 text-center">About</p>
+            <h1 className='text-center'>Evangadi Networks Q&amp;A</h1>
+            <p className="for-6gc" style={{ color: "black" }}>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem voluptate officiis beatae nobis pariatur omnis facere accusamus laboriosam hic, adipisci vero reiciendis, recusandae sit ad, eum quisquam! Molestias, ut commodi!
+            </p>
+            <p className="for-6gc" style={{ color: "black" }}>
+              No matter what stage of life you are in, whether you’re just starting elementary school or being promoted to CEO of a Fortune 500 company, you have much to offer to those who are trying to follow in your footsteps.!
+            </p>
+            <p className="for-6gc" style={{ color: "black" }}>
+              Whether you are willing to share your knowledge or you are just looking to meet mentors of your own, please start by joining the network here.
+            </p>
+            <button className="btn-5wb text-center">HOW IT WORKS</button>
+          </div>
+
+
       </div>
     </div>
   );
