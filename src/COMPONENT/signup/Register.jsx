@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import 'react-toastify/dist/ReactToastify.css';
 import './Register.css';
-import axios  from '../axiosConfig/Axios';
+// import axios  from '../axiosConfig/Axios';
 function Register() {
   const [formData, setFormData] = useState({
     username: '',
@@ -15,6 +15,7 @@ function Register() {
     email: '',
     password: ''
   });
+
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
@@ -32,48 +33,49 @@ function Register() {
       )
   });
 
-async function handleSubmit(e) {
-  e.preventDefault();
-  try {
-    await schema.validate(formData, { abortEarly: false });
-    const response = await axios.post(`/register`, formData, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    if (response.status === 200) {
-      toast.success('Registration successful. Please log in.');
-      navigate('/login');
-    } else {
-      toast.error(response.data.message || 'An error occurred. Please try again.');
-    }
-  } catch (err) {
-    if (err instanceof yup.ValidationError) {
-      const newErrors = {};
-      err.inner.forEach(error => {
-        newErrors[error.path] = error.message;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await schema.validate(formData, { abortEarly: false });
+      const response = await fetch('https://evanforum-2kee.onrender.com/api/users/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
-      setErrors(newErrors);
-    } else {
-      console.error('Error submitting form:', err);
-      toast.error('An error occurred. Please try again.');
+      if (response.ok) {
+        toast.success('Registration successful. Please log in.');
+        navigate('/login');
+      } else {
+        const data = await response.json();
+        toast.error(data.message || 'An error occurred. Please try again.');
+      }
+    } catch (err) {
+      if (err instanceof yup.ValidationError) {
+        const newErrors = {};
+        err.inner.forEach(error => {
+          newErrors[error.path] = error.message;
+        });
+        setErrors(newErrors);
+      } else {
+        console.error('Error submitting form:', err);
+        toast.error('An error occurred. Please try again.');
+      }
     }
-  }
-}
+  };
 
-
-  function handleChange(e) {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value
     });
 
-    // Validate field and update errors
     schema.validateAt(name, { [name]: value })
       .then(() => setErrors({...errors, [name]: null }))
       .catch(err => setErrors({...errors, [name]: err.errors[0] }));
-  }
+  };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);

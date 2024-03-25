@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import  { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import axios from '../axiosConfig/Axios';
+// import axios from '../axiosConfig/Axios';
 import { CgProfile } from 'react-icons/cg';
 import './singlequestion.css';
 
@@ -18,7 +19,7 @@ function SingleQuestion() {
     async function fetchData() {
       try {
         const token = localStorage.getItem('token');
-        const questionResponse = await axios.get(`/question/${questionid}`, {
+        const questionResponse = await axios.get(`https://evanforum-2kee.onrender.com/api/users/question/${questionid}`, {
           headers: {
             Authorization: 'Bearer ' + token,
           },
@@ -27,7 +28,7 @@ function SingleQuestion() {
         setQuestion(questionResponse.data.title.toUpperCase());
         setDescription(questionResponse.data.description.toLowerCase());
 
-        const response = await axios.get(`/all-answers/${questionid}`, {
+        const response = await axios.get(`https://evanforum-2kee.onrender.com/api/users/all-answers/${questionid}`, {
           headers: {
             Authorization: 'Bearer ' + token,
           },
@@ -58,7 +59,7 @@ function SingleQuestion() {
   
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post(`/question/${questionid}`, 
+      const response = await axios.post(`https://evanforum-2kee.onrender.com/api/users/question/${questionid}`, 
         { answer: newAnswer },
         {
           headers: {

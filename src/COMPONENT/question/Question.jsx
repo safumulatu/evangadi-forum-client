@@ -1,4 +1,5 @@
-import axios from "../axiosConfig/Axios";
+import axios from "axios";
+// import axios from "../axiosConfig/Axios";
 import { MdArrowForwardIos } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { useContext, useEffect, useState } from "react";
@@ -15,7 +16,7 @@ function AllQuestions() {
     async function fetchQuestions() {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get(`/getAllquestion`, {
+        const response = await axios.get(`https://evanforum-2kee.onrender.com/api/users/getAllquestion`, {
           headers: {
             Authorization: "Bearer " + token,
           },

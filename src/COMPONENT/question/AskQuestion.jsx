@@ -1,7 +1,8 @@
 import  { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import Toast CSS
-import axios from '../axiosConfig/Axios'
+// import axios from '../axiosConfig/Axios'
+import axios from "axios";
 import ArrowCircleRightTwoToneIcon from "@mui/icons-material/ArrowCircleRightTwoTone";
 import { useNavigate } from "react-router-dom";
 import "./Question.css";
@@ -15,7 +16,7 @@ function AskQuestion() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        `/addquestion`,
+        `https://evanforum-2kee.onrender.com/api/users/addquestion`,
         {
           title: newQuestion,
           description: description,

@@ -31,12 +31,17 @@
 
 .AskQuestions {
   display: inline-block;
-  border-radius: 25px;
+  border-radius: 10px;
   font-size: larger;
-  font-weight: 400;
+  font-weight: 300;
   background-color: #0b5ed7;
   letter-spacing: 2.5px;
   margin-left: 10px;
+  padding: 20px;
+}
+
+.AskQuestions:hover {
+  background-color: #333;
 }
 
 .search-box {
