@@ -134,3 +134,105 @@
     margin-top: 30px;
   }
 }
+/* Example CSS for responsiveness */
+.forbackGrounds {
+  padding: 2rem; /* Padding using rem for responsiveness */
+}
+
+.max-width {
+  max-width: 100%; /* Max width set to 100% for responsiveness */
+}
+
+.text-center {
+  text-align: center; /* Center text for responsiveness */
+}
+
+.mb-3 {
+  margin-bottom: 1.5rem; /* Margin using rem for responsiveness */
+}
+
+.fs-5 {
+  font-size: 1.25rem; /* Font size using rem for responsiveness */
+}
+
+.mb- {
+  margin-bottom: 1rem; /* Margin using rem for responsiveness */
+}
+
+.text-muted {
+  color: #6c757d; /* Example color */
+}
+
+.fs-lg {
+  font-size: 1.5rem; /* Font size using rem for responsiveness */
+}
+
+.text-primary {
+  color: #007bff; /* Example color */
+}
+
+.fw-bold {
+  font-weight: bold; /* Font weight set to bold for responsiveness */
+}
+
+.fst-italic {
+  font-style: italic; /* Font style set to italic for responsiveness */
+}
+
+.text-sucess {
+  color: green; /* Example color */
+}
+
+.justify-center {
+  justify-content: center; /* Center content for responsiveness */
+}
+
+.answerTitle {
+  margin-top: 2rem; /* Margin using rem for responsiveness */
+}
+
+.QuestionList {
+  padding-left: 0; /* Remove default padding for list */
+  list-style-type: none; /* Remove default list style */
+}
+
+.AnswerItem {
+  border: 1px solid #ccc; /* Example border */
+  margin-bottom: 1rem; /* Margin using rem for responsiveness */
+  padding: 1rem; /* Padding using rem for responsiveness */
+}
+
+.Avatar {
+  width: 50px; /* Example width */
+  height: 50px; /* Example height */
+  border-radius: 50%; /* Make the avatar round */
+  margin-right: 1rem; /* Margin using rem for responsiveness */
+}
+
+.username {
+  font-weight: bold; /* Font weight set to bold for username */
+}
+
+.QuestionTitle {
+  margin-bottom: 0; /* Remove margin bottom for question title */
+}
+
+.ArrowIcon {
+  margin-left: 0.5rem; /* Margin using rem for responsiveness */
+}
+
+.fortopmr {
+  margin-top: 2rem; /* Margin using rem for responsiveness */
+}
+
+.blue {
+  background-color: blue; /* Example background color */
+  color: white; /* Example text color */
+  padding: 0.5rem 1rem; /* Padding using rem for responsiveness */
+  border-radius: 0.5rem; /* Border radius using rem for responsiveness */
+  display: inline-block; /* Display as inline-block */
+}
+
+.blue:hover {
+  background-color: darkblue; /* Darken background color on hover */
+}

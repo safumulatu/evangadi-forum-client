@@ -103,6 +103,9 @@
 
 .QuestionTitle {
   margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
   /* Space between username and question title */
 }
 
